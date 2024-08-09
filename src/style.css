@@ -1,3 +1,85 @@
+*,
+*::before,
+*::after {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+:root {
+    --title-color: #ff8c00;
+}
+
+@font-face {
+    font-family: "3dumb";
+    src: url('./fonts/3dumb-webfont.woff2') format('woff2'),
+         url('./fonts/3dumb-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     background-color: aquamarine;
+}
+
+.container {
+    width: 80%;
+    height: 100vh;
+    background-color: beige;
+    margin: 0 auto;
+}
+
+#header-icon {
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    gap: 5rem;
+
+    background-color: beige;
+    padding: 1rem;
+    box-shadow: inset 0px -3px #ffa9a9;
+}
+
+.todoIcon {
+    width: 80px;
+    mix-blend-mode: multiply;
+}
+
+#header-icon > p {
+    font-size: 3rem;
+    font-family: '3dumb';
+    font-weight: bolder;
+    color: var(--title-color);
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+.side-list {
+    margin: 50px 20px;
+}
+
+.side-list-today {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.today-image {
+    width: 3rem;
+    height: 3rem;
+}
+
+.today-text {
+    font-family: '3dumb';
+    font-size: 2rem;
+    color: var(--title-color);
+    font-weight: bold;
+}
+
+main {
+    background-color: 
 }
