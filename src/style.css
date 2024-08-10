@@ -19,7 +19,7 @@
 }
 
 body {
-    background-color: aquamarine;
+    background-color: rgb(255, 178, 127);
 }
 
 .container {
@@ -43,6 +43,12 @@ body {
 .todoIcon {
     width: 80px;
     mix-blend-mode: multiply;
+    transition: 25ms linear;
+}
+
+.todoIcon:hover {
+    scale: 1.1;
+    cursor: pointer;
 }
 
 #header-icon > p {
@@ -59,27 +65,22 @@ body {
 
 .side-list {
     margin: 50px 20px;
-}
-
-.side-list-today {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
     align-items: center;
-    gap: 2rem;
 }
 
-.today-image {
+.side-image {
     width: 3rem;
     height: 3rem;
+    justify-self: end;
 }
 
-.today-text {
+.side-text {
     font-family: '3dumb';
     font-size: 2rem;
     color: var(--title-color);
     font-weight: bold;
-}
-
-main {
-    background-color: 
+    justify-self: start;
 }

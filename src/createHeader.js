@@ -15,5 +15,10 @@ export default function createHeader() {
     let imageRight = new Image();
     imageRight.src = todoIcon;
     imageRight.classList.add('todoIcon');
+
+    imageRight.addEventListener('click', () => {
+        console.log('test');
+    });
+
     header.appendChild(imageRight);
 }

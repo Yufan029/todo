@@ -1,6 +1,9 @@
 import './style.css';
 import createHeader from './createHeader';
-import createTodayListItem from './createSideToday';
+import createSideListItem from './createSideListItem';
+import todayImage from './images/today_image.png';
+import projectImage from './images/project.png';
 
 createHeader();
-createTodayListItem();
+createSideListItem('Today', todayImage);
+createSideListItem('Projects', projectImage);
