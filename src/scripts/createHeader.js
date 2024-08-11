@@ -1,4 +1,4 @@
-import todoIcon from './images/todo-icon.png';
+import todoIcon from '../images/todo-icon.png';
 
 export default function createHeader() {
     let imageLeft = new Image();
@@ -16,9 +16,19 @@ export default function createHeader() {
     imageRight.src = todoIcon;
     imageRight.classList.add('todoIcon');
 
-    imageRight.addEventListener('click', () => {
-        console.log('test');
+    imageLeft.addEventListener('click', openDialog);
+    imageRight.addEventListener('click', openDialog);
+
+    const dialog = document.querySelector('dialog');
+    const closeBtn = document.querySelector('.close');
+    closeBtn.addEventListener('click', () => {
+        dialog.close();
     });
 
     header.appendChild(imageRight);
+}
+
+function openDialog() {
+    const dialog = document.querySelector('dialog');
+    dialog.showModal();
 }
