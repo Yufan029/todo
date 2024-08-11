@@ -67,6 +67,7 @@ body {
     margin: 50px 20px;
     display: grid;
     grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr 2fr 1fr;
     gap: 20px;
     align-items: center;
 }
@@ -82,5 +83,25 @@ body {
     font-size: 2rem;
     color: var(--title-color);
     font-weight: bold;
-    justify-self: start;
+    align-self: start;
+    cursor: pointer;
+    transition: 25ms linear;
+}
+
+.side-text:hover {
+    scale: 1.1;
+}
+
+.side-text:active {
+    scale: 1;
+}
+
+.side-image.Projects,
+.side-text.Projects {
+    grid-row: 2 / 4;
+    align-self: start;
+}
+
+.side-text.Projects {
+    margin: 0;
 }
