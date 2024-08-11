@@ -1,5 +1,6 @@
 import '../css/style.css';
 import '../css/dialogStyle.css';
+import '../css/dialogForm.css';
 import createHeader from './createHeader';
 import createSideListItem from './createSideListItem';
 import todayImage from '../images/today_image.png';

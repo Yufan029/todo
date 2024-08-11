@@ -15,20 +15,29 @@ export default function createHeader() {
     let imageRight = new Image();
     imageRight.src = todoIcon;
     imageRight.classList.add('todoIcon');
-
-    imageLeft.addEventListener('click', openDialog);
-    imageRight.addEventListener('click', openDialog);
-
-    const dialog = document.querySelector('dialog');
-    const closeBtn = document.querySelector('.close');
-    closeBtn.addEventListener('click', () => {
-        dialog.close();
-    });
-
+    addEventListenerForImage(imageLeft, imageRight);
+    
     header.appendChild(imageRight);
 }
 
 function openDialog() {
     const dialog = document.querySelector('dialog');
     dialog.showModal();
+}
+
+function addEventListenerForImage(left, right) {
+    left.addEventListener('click', openDialog);
+    right.addEventListener('click', openDialog);
+
+    const dialog = document.querySelector('dialog');
+    const submit = document.querySelector('#submit');
+    submit.addEventListener('click', (e) => {
+        e.preventDefault();
+        dialog.close();
+    });
+
+    const cancel = document.querySelector('#cancel');
+    cancel.addEventListener('click', () => {
+        dialog.close();
+    });
 }
