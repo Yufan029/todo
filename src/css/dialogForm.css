@@ -8,9 +8,12 @@
 }
 
 #form {
+    font-family: '3dumb';
+    color: var(--title-color);
+    font-weight: bold;
     display: grid;
     grid-template-columns: 1fr 2fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 3fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 3fr;
     gap: 1rem;
 }
 
@@ -18,7 +21,41 @@
     height: 1.5rem;
 }
 
-.close {
+.buttons {
+    align-self: center;
+    display: flex;
+    gap: 20px;
+}
+
+input {
+    border: 1px solid var(--title-color);
+    border-radius: 5px;
+    color: rgb(88, 88, 255);
+}
+
+input:focus,
+#priority:focus,
+#projects:focus,
+#notes:focus {
+    outline: none;
+}
+
+#priority,
+#projects,
+#notes {
+    border: 1px solid var(--title-color);
+    color:rgb(88, 88, 255);
+}
+
+#cancel,
+#submit {
+    font-family: '3dumb';
     width: 100px;
-    align-self: flex-end;
+    padding: 1px 5px;
+    color: var(--title-color);
+    font-weight: 1000;
+    border: 1px solid var(--title-color);
+    border-radius: 5px;
+    background-color:transparent;
+    cursor: pointer;
 }
