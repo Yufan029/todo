@@ -21,9 +21,12 @@
                 <option value="3">3</option>
             </select>
             <label for="projects">Projects</label>
-            <select id="projects" name="projects" value="default">
-                <option value="default">default</option>
-            </select>
+            <div class="projects-list">
+                <input type="text" list="projects" id="dialog-project-input"/>
+                <datalist id="projects">
+                    <option>Default</option>
+                </datalist>
+            </div>
             <label for="notes">Notes</label>
             <textarea id="notes"></textarea>
         </form>
@@ -36,7 +39,20 @@
         <header id="header-icon"></header>
         <div class="content">
             <aside class="side-list"></aside>
-            <main></main>
+            <main>
+                <div class="todo-items">
+                    <div class="item">
+                        <img class="card-circle" src="./images/circle.png"/>
+                        <div class="card" data-set="">
+                            <p class="card-title">This is title</p>
+                            <p class="card-duedate">2024-08-13 23:20</p>
+                            <p class="card-project">Project</p>
+                            <p class="card-description">Description Lorem ipsu as quisquam repr...............</p>
+                            <img class="card-delete" src="./images/xxx.png"/>
+                        </div>
+                    </div>
+                </div>
+            </main>
         </div>
     </div>
 </body>

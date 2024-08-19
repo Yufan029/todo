@@ -41,10 +41,15 @@ input:focus,
 }
 
 #priority,
-#projects,
 #notes {
     border: 1px solid var(--title-color);
     color:rgb(88, 88, 255);
+    border-radius: 5px;
+}
+
+.projects-list input{
+    height: 1.5rem;
+    width: 100%;
 }
 
 #cancel,

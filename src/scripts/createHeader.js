@@ -1,7 +1,6 @@
 import todoIcon from '../images/todo-icon.png';
 import TodoItem from './todoItem';
-
-const todoList = [];
+import createProjects from './createProjects';
 
 export default function createHeader() {
     let imageLeft = new Image();
@@ -28,7 +27,7 @@ function addEventListenerForImage(left, right) {
     const inputDescription = document.querySelector('#description');
     const inputDueDate = document.querySelector('#dueDate');
     const selectPriority = document.querySelector('#priority');
-    const selectProject = document.querySelector('#projects');
+    const selectProject = document.querySelector('#dialog-project-input');
     const textNotes = document.querySelector('#notes');
     const dialog = document.querySelector('dialog');
     const submit = document.querySelector('#submit');
@@ -63,11 +62,20 @@ function addEventListenerForImage(left, right) {
             selectProject.value,
             textNotes.value);
 
+        const todoList = localStorage.getItem('todoList');
+        let parsedTodos = null;
+        if (todoList === null) {
+            parsedTodos = new Array();
+        } else {
+            parsedTodos = JSON.parse(todoList);
+        }
+         
         // add to local storage
-        todoList.push(todoItem);
+        parsedTodos.push(todoItem);
 
-        localStorage.setItem('todoList', JSON.stringify(todoList));
+        localStorage.setItem('todoList', JSON.stringify(parsedTodos));
         // render screen;
+        createProjects();
         console.log(todoList);
         e.preventDefault();
         dialog.close();
