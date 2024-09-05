@@ -8,6 +8,7 @@ import todayImage from '../images/today_image.png';
 import projectImage from '../images/project.png';
 import clearImage from '../images/clear.png';
 import createProjects from './createProjects';
+import { createTodoItems } from './createTodoItems';
 
 const todoList = localStorage.getItem('todoList');
 const todos = JSON.parse(todoList);
@@ -18,6 +19,7 @@ createSideListItem('Today', todayImage);
 createSideListItem('Projects', projectImage);
 createSideListItem('Clear', clearImage);
 createProjects();
+createTodoItems();
 
 const clearBtn = document.querySelector('.side-text.Clear');
 clearBtn.addEventListener('click', () => {
@@ -26,8 +28,8 @@ clearBtn.addEventListener('click', () => {
     createProjects();
 });
 
-const cardDiv = document.querySelector('.card');
-cardDiv.addEventListener('click', (e) => {
-    const dialog = document.querySelector('#dialog');
-    dialog.showModal();
-});
+// const cardDiv = document.querySelector('.card');
+// cardDiv.addEventListener('click', (e) => {
+//     const dialog = document.querySelector('#dialog');
+//     dialog.showModal();
+// });

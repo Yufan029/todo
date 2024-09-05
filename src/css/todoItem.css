@@ -10,10 +10,8 @@
     padding: 1rem 2rem;
     width: 70%;
     border: 1px solid #ff8c00;
-    display: grid;
-    grid-template-columns: 2fr 3fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-auto-flow: column;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     border-radius: 1rem;
     transition: 250ms linear;
@@ -29,38 +27,49 @@
 
 .card-title {
     font-family: '3dumb';
-    font-size: large;
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
 .card-duedate {
-    font-size: smaller;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1rem;
 }
 
 .card-project {
     font-family: '3dumb';
     font-weight: bold;
+    font-size: 1.5rem;
 }
 
-.card-notes {
-    grid-row: 1 / 3;
-    align-self: center;
-    font-size: small;
+.high-priority {
+    background-color: rgb(231, 94, 151);
 }
 
-.card-description {
-    justify-self: right;
-    font-style: italic;
+.medium-priority {
+    background-color: #b07df3;
 }
 
-.card-project {
-    justify-self: center;
+.low-priority {
+    background-color: rgb(129, 216, 129);
+}
+
+.card-circle {
+    width: 30px;
+    height: 30px;
 }
 
 .card-delete {
-    grid-row: 1 / 3;
-    align-self: center;
-    justify-self: right;
-    margin-right: 1rem;
+    width: 4%;
+    height: 4%;
 }
 
+.card-delete:hover {
+    cursor: pointer;
+    scale: 1.1;
+}
+
+.card-delete:active {
+    scale: 1;
+}

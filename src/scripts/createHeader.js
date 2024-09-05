@@ -1,6 +1,7 @@
 import todoIcon from '../images/todo-icon.png';
 import TodoItem from './todoItem';
 import createProjects from './createProjects';
+import { formatISO } from "date-fns";
 
 export default function createHeader() {
     let imageLeft = new Image();
@@ -34,8 +35,7 @@ function addEventListenerForImage(left, right) {
 
     left.addEventListener('click', () => {
         dialog.showModal();
-        clearDialog();
-        
+        clearDialog();        
     });
 
     right.addEventListener('click', () => {
@@ -46,7 +46,9 @@ function addEventListenerForImage(left, right) {
     function clearDialog() {
         inputTitle.value = '';
         inputDescription.value = '';
-        inputDueDate.value = null;
+        let timeNow = formatISO(new Date());
+        let timeNowString = timeNow.toString().slice(0, timeNow.indexOf('+'));
+        inputDueDate.value = timeNowString;
         selectPriority.selectedIndex = 0;
         selectProject.selectedIndex = 0;
         textNotes.value = '';

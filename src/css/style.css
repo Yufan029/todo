@@ -126,7 +126,6 @@ body {
     height: 350px;
     font-family: '3dumb';
     grid-column: 2 / 3;
-    padding: 0 10px;
     font-size: larger;
     align-self: start;
     color: var(--title-color);
@@ -136,11 +135,38 @@ body {
     overflow-x: hidden;
 }
 
-.side-text-projects.all-projects > *:hover {
+.side-text-projects.all-projects > div {
+    height: 3rem;
+}
+
+.side-text-projects.all-projects > *:active {
+    scale: 1;
+}
+
+.projectItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.projectItem img {
+    width: 15%;
+}
+
+.projectItem p:hover {
     cursor: pointer;
     scale: 1.1;
 }
 
-.side-text-projects.all-projects > *:active {
+.projectItem p:active {
+    scale: 1;
+}
+
+.projectItem img:hover {
+    cursor: pointer;
+    scale: 1.1;
+}
+
+.projectItem img:active {
     scale: 1;
 }
