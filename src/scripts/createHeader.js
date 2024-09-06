@@ -2,6 +2,7 @@ import todoIcon from '../images/todo-icon.png';
 import TodoItem from './todoItem';
 import createProjects from './createProjects';
 import { formatISO } from "date-fns";
+import { createTodoItems } from './createTodoItems';
 
 export default function createHeader() {
     let imageLeft = new Image();
@@ -78,6 +79,7 @@ function addEventListenerForImage(left, right) {
         localStorage.setItem('todoList', JSON.stringify(parsedTodos));
         // render screen;
         createProjects();
+        createTodoItems(parsedTodos);
         console.log(todoList);
         e.preventDefault();
         dialog.close();

@@ -19,12 +19,12 @@ createSideListItem('Today', todayImage);
 createSideListItem('Projects', projectImage);
 createSideListItem('Clear', clearImage);
 createProjects();
-createTodoItems();
+createTodoItems(todos);
 
 const clearBtn = document.querySelector('.side-text.Clear');
 clearBtn.addEventListener('click', () => {
     localStorage.clear();
-    document.querySelector('main').textContent='';
+    document.querySelector('.todo-items').textContent='';
     createProjects();
 });
 

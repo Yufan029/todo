@@ -27,6 +27,7 @@ body {
     height: 100vh;
     background-color: beige;
     margin: 0 auto;
+    overflow-y: auto;
 }
 
 #header-icon {
